@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babu Software Courses</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <h2>🎓 Babu <span>Software Courses</span></h2>
+        <a href="#courses">Explore Courses</a>
+    </nav>
+
+    <header>
+        <p class="tagline">LEARN TODAY, LEAD TOMORROW</p>
+        <h1>Build Your Future with<br>
+            <span>Software Courses</span>
+        </h1>
+        <p>Learn programming, cloud computing and DevOps skills.</p>
+        <a class="button" href="#courses">Start Learning →</a>
+    </header>
+
+    <main id="courses">
+        <h2>Explore Our Courses</h2>
+        <input id="search" placeholder="Search software courses...">
+
+        <div class="grid">
+            {% for course in courses %}
+            <article class="card">
+                <p class="category">{{ course.category }}</p>
+                <h3>{{ course.name }}</h3>
+                <a href="https://www.google.com/search?q={{ course.name|urlencode }}+official+tutorial"
+                   target="_blank" rel="noopener noreferrer">
+                    Start Learning →
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Babu Software Courses</p>
+        <p>Learn Today, Lead Tomorrow.</p>
+    </footer>
+
+    <script>
+        const search = document.getElementById("search");
+        const cards = document.querySelectorAll(".card");
+
+        search.addEventListener("input", function () {
+            cards.forEach(function (card) {
+                card.hidden = !card.textContent.toLowerCase()
+                    .includes(search.value.toLowerCase());
+            });
+        });
+    </script>
+</body>
+</html>

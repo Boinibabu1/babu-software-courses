@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #071225;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: #0d1930;
+    border-bottom: 1px solid #263b5e;
+}
+
+nav span, header h1 span {
+    color: #27c5ff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+header {
+    text-align: center;
+    padding: 90px 20px;
+    background:
+        radial-gradient(ellipse at top right, #542b8555, transparent 50%),
+        linear-gradient(135deg, #10264b, #071225);
+}
+
+.tagline {
+    color: #27c5ff;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: clamp(35px, 6vw, 60px);
+    line-height: 1.2;
+}
+
+header p {
+    color: #b6c5dc;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 25px;
+    background: linear-gradient(100deg, #087fff, #8b45f5);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+main {
+    padding: 50px 7%;
+}
+
+main > h2 {
+    text-align: center;
+    font-size: 32px;
+}
+
+#search {
+    display: block;
+    width: min(100%, 500px);
+    margin: 25px auto 35px;
+    padding: 15px;
+    border: 1px solid #314a70;
+    border-radius: 10px;
+    background: #101e35;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid #263f65;
+    background: linear-gradient(145deg, #142642, #0b172a);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #27a9ff;
+}
+
+.category {
+    color: #27c5ff;
+    font-size: 13px;
+}
+
+.card h3 {
+    font-size: 23px;
+}
+
+.card a {
+    color: #8ecbff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #040b17;
+    color: #aabbd4;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 500px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    header {
+        padding: 60px 18px;
+    }
+}
